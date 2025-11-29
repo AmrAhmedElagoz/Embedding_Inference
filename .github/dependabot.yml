@@ -1,0 +1,55 @@
+# To get started with Dependabot version updates, you'll need to specify which
+# package ecosystems to update and where the package manifests are located.
+# Please see the documentation for all configuration options:
+# https://docs.github.com/code-security/dependabot/dependabot-version-updates/configuration-options-for-the-dependabot.yml-file
+
+version: 2
+updates:
+  # Main dependencies
+  - package-ecosystem: "pip"
+    directory: "/"
+    schedule:
+      interval: "weekly"
+      day: "sunday"
+      time: "09:00"
+      timezone: "Africa/Cairo"
+    
+    allow:
+      - dependency-type: "direct"
+      - dependency-type: "indirect"
+    
+    versioning-strategy: "auto"
+    
+    # Exclude testing dependencies from this group
+    ignore:
+      - dependency-name: "pytest"
+      - dependency-name: "Sphinx"
+      - dependency-name: "sphinx-rtd-theme"
+      - dependency-name: "sphinx-autodoc-typehints"
+      - dependency-name: "pytest-cov"
+      - dependency-name: "mypy"
+      - dependency-name: "flake8"
+      - dependency-name: "tox"
+      - dependency-name: "black"
+      - dependency-name: "pytest-mock"
+      - dependency-name: "pytest-watcher"
+    
+    commit-message:
+      prefix: "deps"
+      include: "scope"
+
+    target-branch: "main"
+    
+    labels:
+      - "dependencies"
+      - "production"
+    
+    open-pull-requests-limit: 10
+
+  # Check GitHub Actions
+  - package-ecosystem: "github-actions"
+    directory: "/.github/workflows"
+    schedule:
+      interval: "weekly"
+    labels:
+      - "actions"
