@@ -24,7 +24,7 @@ dependencies = [
     "langchain-community>=0.3.30",
     "fastapi>=0.115.14",
     "uvicorn>=0.35.0",
-    "xformers>=0.0.31"
+    "xformers>=0.0.35"
 ]
 
 [project.optional-dependencies]
