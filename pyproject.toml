@@ -19,7 +19,7 @@ keywords = ["machine learning", "python", "AI", "data science", "RAG", "LLM"]
 requires-python = ">=3.12"
 
 dependencies = [
-    "transformers>=4.53.0",
+    "transformers>=5.5.3",
     "sentence-transformers>=4.1.0",
     "langchain-community>=0.3.30",
     "fastapi>=0.115.14",
